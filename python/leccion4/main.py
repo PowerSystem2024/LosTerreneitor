@@ -228,7 +228,7 @@ print(conjunto3)
 
 conjunto3 = (
     conjunto1 - conjunto2
-)  # Asigana el valor que está en el conjunto1 y no en el conjunto2
+)  # Asigna el valor que está en el conjunto1 y no en el conjunto2
 print(conjunto3)
 
 conjunto3 = conjunto2 - conjunto1  # Vemos el conjunto2
