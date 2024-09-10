@@ -5,9 +5,14 @@ lista = [
     "Gabriel",
     "Franco",
     "Maximiliano",
+    "🎈",
     "Maximiliano",
     "Agustín",
     "Elias",
+    "🎈",
+    38,
+    28,
+    38,
 ]
 
 # Mostrar la lista con duplicados
