@@ -1,11 +1,11 @@
 # Lista original con duplicados
 lista = [
     "Juan Pablo",
+    "🎈",
     "Juan Pablo",
     "Gabriel",
     "Franco",
     "Maximiliano",
-    "🎈",
     "Maximiliano",
     "Agustín",
     "Elias",
