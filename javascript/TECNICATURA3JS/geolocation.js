@@ -7,7 +7,7 @@ const createGoogleMap = (longitude, latitude) => `
         ></iframe>
 `;
 
-const createHTML = (latitude, longitude, altitude, ts) => `
+const createHTML = (latitude, longitude, accuracy, speed, ts) => `
     <div>
       <header>
         <h3>Ubicación</h3>
@@ -18,14 +18,16 @@ const createHTML = (latitude, longitude, altitude, ts) => `
             <tr>
               <th>Latitud</th>
               <th>Longitud</th>
-              <th>Altitud</th>
+              <th>Presición</th>
+              <th>Velocidad</th>
               <th>Hora</th>
             </tr>
           </thead>
           <tbody>
             <td>${latitude}</td>
             <td>${longitude}</td>
-            <td>${altitude}</td>
+            <td>${accuracy} mts.</td>
+            <td>${speed}</td>
             <td>${ts}</td>
           </tbody>
         </table>
@@ -48,12 +50,15 @@ function getLocation() {
     navigator.geolocation.getCurrentPosition((position) => {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
-      const altitude = position.coords.altitude;
+      const accuracy = position.coords.accuracy;
+      const speed =
+        position.coords.speed === null ? "Solo móvil" : position.coords.speed;
       const ts = position.timestamp;
       document.body.innerHTML = createHTML(
         latitude,
         longitude,
-        altitude,
+        accuracy.toFixed(2),
+        speed,
         formatTime(ts)
       );
     });
