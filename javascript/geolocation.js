@@ -1,5 +1,3 @@
-document.body.style.background = "#333";
-
 const createGoogleMap = (longitude, latitude) => `
          <iframe
           src=https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3362.721134731404!2d${longitude}!3d${latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDMzJzM3LjAiUyA2NcKwMTQnMDYuNSJX!5e0!3m2!1ses-419!2sar!4v1716605671110!5m2!1ses-419!2sar
@@ -65,6 +63,46 @@ function getLocation() {
   }
 }
 
+const readFile = async () => {
+  const fileReader = await fetch("/README.md");
+  const md = await fileReader.text();
+  return md;
+};
+
+const createDiv = async () => {
+  const div = document.createElement("div");
+  div.classList.add("reader");
+  document.body.appendChild(div);
+  div.innerHTML = readFile();
+};
+
+let array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let array2 = ["a", "b", "c", "d", "e", "f", "g", "h"];
+
+function recorrerArrays(arr1, arr2) {
+  let hash = "";
+  let i = 0,
+    j = 0;
+  while (i < arr1.length || j < arr2.length) {
+    if (i < arr1.length) {
+      hash += arr1[i++];
+    }
+    if (j < arr2.length) {
+      hash += arr2[j++];
+    }
+    if (i % arr1.length === 4) {
+      hash += "_";
+    }
+    if (j % arr1.length === arr2.length) {
+      hash += "_";
+    }
+    console.log(hash);
+  }
+}
+recorrerArrays(array1, array2);
+
 document.addEventListener("DOMContentLoaded", () => {
+  readFile();
   getLocation();
+  createDiv();
 });
