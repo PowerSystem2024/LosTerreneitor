@@ -35,3 +35,25 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Delimitadores para archivos de JAVA
+/java/leccion1/Ejercicio1/target/
+/nbproject/private/
+/java/Leccion2/target/
+/java/CondicionalEjercicio_1/target/
+/java/CondicionalEjercicio_2/target/
+/java/CondicionalEjercicio_3/target/
+/node_modules
+/java/CondicionalEjercio_4/target/
+/java/CondicionalEjercicio_4/target/
+/java/CondicionalEjercicio_5/target/
+/java/CondicionalEjercicio_6/target/
+/java/Practicas/Leccion2/target/
+/java/Leccion2/CicloWhile/target/
+/java/Ciclos01/target/
+/java/Leccion2/EjercicioCiclos02/target/
+/java/Leccion3/leccionClasesObjetos/target/
+/java/Leccion3/leccionClasesObjetos/Ciclos06/target/
+/java/Leccion3/leccionClasesObjetos/EjercicioCiclos06/target/
+/java/EjericioCiclos01/target/
+/java/Leccion2/EjercicioCiclos07/target/
