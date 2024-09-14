@@ -1,4 +1,13 @@
-# Grupo Los Terreneitor - UTN-FRSR - COHORTE 2024
+<div align="center">
+
+| Los Terreneitor |
+| --------------- |
+
+<img src="public/logo-terre.png" alt="Logo Portafolio Terreneitor" width="300" height="300" />
+
+</div>
+
+# Grupo UTN-FRSR - COHORTE 2024
 
 ### Integrantes:
 
