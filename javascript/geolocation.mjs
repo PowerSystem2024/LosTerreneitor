@@ -63,19 +63,6 @@ function getLocation() {
   }
 }
 
-const readFile = async () => {
-  const fileReader = await fetch("/README.md");
-  const md = await fileReader.text();
-  return md;
-};
-
-const createDiv = async () => {
-  const div = document.createElement("div");
-  div.classList.add("reader");
-  document.body.appendChild(div);
-  div.innerHTML = readFile();
-};
-
 let array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let array2 = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
@@ -102,7 +89,5 @@ function recorrerArrays(arr1, arr2) {
 recorrerArrays(array1, array2);
 
 document.addEventListener("DOMContentLoaded", () => {
-  readFile();
   getLocation();
-  createDiv();
 });
