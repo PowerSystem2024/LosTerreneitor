@@ -1,19 +1,25 @@
 public class CuestionarioClase6 {
     public static void main(String[] args) {
-        // Pregunta N° 1: ¿Cual es el tipo de dato de esta variable?
+        // Pregunta número 1
+        // ¿Cuál es el tipo de dato de esta variable?
         var a = 0;
-        System.out.println("El tipo de dato de la variable es: " + typeOf(a));
-        // Pregunta N° 2: ¿Cual es el rango de tipo short?
+        System.out.println("El tipo de dato de la variable a es: " + typeOf(a));
+        // Pregunta número 2
+        // ¿Cuál es el rango del tipo short?
         System.out.println("El rango del short es: " + Short.MIN_VALUE + " a " + Short.MAX_VALUE);
-        //Pregunta N°3: ¿Cuantos bytes tiene una variable de tipo long?
-        System.out.println("La variable long tiene: " + Long.BYTES + " bytes.");
-        //Pregunta N°4: ¿Cuantos bytes toma una variable de tipo int?
-        System.out.println("La variable int tiene: " + Integer.SIZE + " bytes.");
-        //Pregunta N°5 ¿Cual es el tipo de dato para esta variable?
+        // Pregunta número 3
+        // ¿Cuántos bytes tiene una variable de tipo long?
+        System.out.println("La variable long tiene " + Long.BYTES + " bytes.");
+        // Pregunta número 4
+        // ¿Cuántos bits toma una variable de tipo int?
+        System.out.println("La variable int tiene " + Integer.SIZE + " bits.");
+        // Pregunta número 5
+        // ¿Cuál es el tipo de dato para esta variable?
         var b = 5.3;
         System.out.println("El tipo de datos de " + b + " es " + typeOf(b));
-        //Pregunta N° 6: ¿Cuantos bytes toma una variable de tipo flotante?
-        System.out.println("La variable tipo float tiene: " + Float.SIZE + " bytes.");
+        // Pregunta número 6
+        // ¿Cuántos bits toma una variable de tipo flotante?
+        System.out.println("La variable tipo float tiene " + Float.SIZE + " bits.");
     }
 
     public static String typeOf(Object obj) {
@@ -28,27 +34,27 @@ public class CuestionarioClase6 {
         return "double";
     }
 
-    public static String typeOf(long obj) {
-        return "long";
-    }
-
     public static String typeOf(float obj) {
         return "float";
     }
 
-    public static String typeOf(char obj) {
-        return "char";
+    public static String typeOf(long obj) {
+        return "long";  
     }
 
-    public static String typeOf(short obj){
+    public static String typeOf(short obj) {
         return "short";
     }
 
-    public static String typeOf(byte obj){
+    public static String typeOf(byte obj) {
         return "byte";
-
     }
-    public static String typeOf(boolean obj){
+
+    public static String typeOf(boolean obj) {
         return "boolean";
+    }
+
+    public static String typeOf(char obj) {
+        return "char";
     }
 }
