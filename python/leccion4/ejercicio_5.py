@@ -4,6 +4,9 @@ Hacer un programa para determinar el factorial
 de un número positivo
 """
 
+print("\n|---------|")
+print("|FACTORIAL|")
+print("|---------|\n")
 num = int(input("Ingrese un número positivo para determinar su factorial: "))
 
 
