@@ -10,6 +10,9 @@ let persona = {
   nombreCompleto: function () {
     return this.nombre + " " + this.apellido;
   },
+  get nombreEdad() {
+    return "El nombres es: " + this.nombre + ", Edad:" + this.edad;
+  },
 };
 
 console.log("Objeto con método");
@@ -51,3 +54,7 @@ persona.apellida = "Calcagni"; // Cambiamos de manera dinámica el nombre de un 
 console.log(persona.apellida);
 delete persona.apellida; // eliminamos el error
 console.log(persona);
+
+// Métodos get y set Parte 1 y 2
+console.log("Comenzamos a utilizar el método get");
+console.log(persona.nombreEdad);
