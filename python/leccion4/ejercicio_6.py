@@ -15,7 +15,8 @@ def tabla(n):
     lista = []
     for i in range(1, 11):
         lista.append(i * n)
-    print(lista)
+    for j in lista:
+        print(j, end=",")
 
 
 tabla(num)
