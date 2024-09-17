@@ -56,3 +56,23 @@ def sumar(a, b):
 
 resultado = sumar(6, 9)
 print(f"El resultado es {resultado}")
+
+
+# Funciones valores por default en los argumentos
+def sumar_2(a=0, b=0) -> int:
+    return a + b
+
+
+resultado = sumar_2()
+print(f"La suma es {resultado}")
+print(f"La suma es {sumar_2(66, 20)}")
+
+
+# Argumentos, variables en funciones
+def listar_nombres(*nombres):  # Normalmente se utiliza *args
+    for nombre in nombres:
+        print(nombre)
+
+
+listar_nombres("Mario", "Gabriel", "Agustin")
+listar_nombres("Carlos", "Gerardo", "Lidia")
