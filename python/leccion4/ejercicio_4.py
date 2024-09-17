@@ -26,6 +26,9 @@ def sumar_pares(num):
     return sum(el)
 
 
-print(
-    f"La suma de todos los pares de {format_num - 1} resulta en {sumar_pares(format_num)}"
-)
+if format_num <= 4:
+    print(f"No es posible sumar números dentro de ese rango: {format_num - 1}")
+else:
+    print(
+        f"La suma de todos los pares dentro del rango {format_num - 1} resulta en {sumar_pares(format_num)}"
+    )
