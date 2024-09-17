@@ -13,7 +13,7 @@ contactos = {}
 i = 0
 
 
-# En StackOverflow hay muchos ejemplos de como crear un menú!
+# En StackOverflow hay muchos ejemplos de como crear un menú en python!
 def menu():
     print("+" + "-" * 30 + "+")
     print("|" + " " * 11 + "AGENDA" + " " * 13 + "|")
@@ -26,7 +26,7 @@ def menu():
 
 
 def agenda():
-    global contactos, i
+    global contactos, i  # Indica que vamos a modificar las variables globales
     while True:
         menu()
         num = int(input("Seleccione un ítem del menú: "))
