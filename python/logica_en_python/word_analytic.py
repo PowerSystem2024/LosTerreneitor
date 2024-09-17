@@ -2,13 +2,11 @@ from colorama import init, Fore
 
 init()
 
-print()
-print("|---------------------|")
+print("\n|---------------------|")
 print("| Contador de Vocales |")
 print("|          y          |")
 print("|       Palabras      |")
-print("|---------------------|")
-print()
+print("|---------------------|\n")
 word = input("Ingrese una palabra: ")
 
 
