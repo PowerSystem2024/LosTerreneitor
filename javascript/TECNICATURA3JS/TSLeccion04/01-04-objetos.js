@@ -7,6 +7,13 @@ let persona = {
   apellido: "Meza",
   email: "mario_meza@email.com",
   edad: 38,
+  idioma: "es",
+  get lang() {
+    return this.idioma.toUpperCase();
+  },
+  set lang(lang) {
+    return (this.idioma = lang.toUpperCase());
+  },
   nombreCompleto: function () {
     return this.nombre + " " + this.apellido;
   },
@@ -58,3 +65,21 @@ console.log(persona);
 // Métodos get y set Parte 1 y 2
 console.log("Comenzamos a utilizar el método get");
 console.log(persona.nombreEdad);
+console.log("Comenzamos con el método get para idioma");
+console.log(persona.lang);
+console.log("Comenzamos con el método set");
+persona.lang = "en";
+console.log(persona.lang);
+
+// Constructores de objetos
+function Persona3(nombre = "Luis", apellido, email) {
+  this.nombre = nombre;
+  this.apellido = apellido;
+  this.email = email;
+}
+
+let padre = new Persona3("Daniel", "Calcagni", "tutosneotecs@gmail.com");
+console.log(padre);
+
+let madre = new Persona3("Lidia", "Meza", "lidia_meza@email.com");
+console.log(madre);
