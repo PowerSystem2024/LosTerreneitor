@@ -26,7 +26,7 @@ def menu():
 
 
 def agenda():
-    global contactos, i  # Indica que vamos a modificar las variables globales
+    global contactos, i  # Indica que vamos a modificar las variables globales dentro de la fucnión
     while True:
         menu()
         num = int(input("Seleccione un ítem del menú: "))
@@ -34,7 +34,7 @@ def agenda():
             usuario = input("Ingrese el nombre de usuario: ")
             telefono = input("Ingrese el número de teléfono: ")
             contactos[usuario] = telefono
-            print(f"¡Contacto {usuario} agregado con éxito!")
+            print(f"¡Contacto agregado con éxito!")
         elif num == 2:
             if not contactos:
                 print("No hay contactos que borrar en la agenda.")
