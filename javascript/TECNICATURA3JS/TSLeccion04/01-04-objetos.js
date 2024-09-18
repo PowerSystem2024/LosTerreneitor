@@ -76,10 +76,68 @@ function Persona3(nombre = "Luis", apellido, email) {
   this.nombre = nombre;
   this.apellido = apellido;
   this.email = email;
+  this.nombreCompleto = function () {
+    return this.nombre + " " + this.apellido;
+  };
 }
 
 let padre = new Persona3("Daniel", "Calcagni", "tutosneotecs@gmail.com");
 console.log(padre);
-
+padre.telefono = "2664562887";
+console.log(padre);
 let madre = new Persona3("Lidia", "Meza", "lidia_meza@email.com");
 console.log(madre);
+console.log(padre.nombreCompleto());
+
+// Diferentes formas de crear objetos
+let objeto = new Object(); // Esta es una opción formal
+let objeto2 = {}; // Esta opción es breve y recomendada
+
+// Caso string
+let string = new String("Hola");
+let string2 = "Hola"; // Sintaxis simplificada y recomendada
+
+// Caso con números
+let number = new Number(1); // Formal no recomendable
+let number2 = 1; // Sintáxis recomendada
+
+// Caso booleano
+let boolean = new Boolean(true);
+let bollean2 = false; // Sintáxis recomendada
+
+// Caso arreglos
+let arreglo = new Array();
+let arreglo2 = []; // Sintáxis recomendada
+
+// Caso funciones
+let miFuncion = new (function () {})(); // Todo despues de new es considerado objeto
+let miFuncion2 = function () {}; // Sintáxis recomendada
+let miFuncion3 = () => {};
+
+// El uso de prototype
+Persona3.prototype.telefono = "2664562886";
+console.log(padre);
+console.log(madre);
+madre.telefono = "123456789";
+console.log(madre.telefono);
+
+// El uso del call
+let persona4 = {
+  nombre: "Lidia",
+  apellido: "Torres",
+  nombreCompleto4: function (titulo, telefono) {
+    return titulo + ": " + this.nombre + " " + this.apellido + " " + telefono;
+    // return this.nombre + " " + this.apellido;
+  },
+};
+
+let persona5 = {
+  nombre: "Carlos",
+  apellido: "Meza",
+};
+console.log(persona4.nombreCompleto4("Lic.", "2665123456"));
+console.log(persona4.nombreCompleto4.call(persona5, "Ing.", "2664598741"));
+
+// Método Apply
+let arreglo3 = ["Ing.", "2665647464"];
+console.log(persona4.nombreCompleto4.apply(persona5, arreglo3));
