@@ -1,4 +1,8 @@
 /* color palette from <https://github.com/vuejs/theme> */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
@@ -55,6 +59,7 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
   font-weight: normal;
 }
 
@@ -62,6 +67,8 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
+  margin: 0;
+  padding: 0;
   transition:
     color 0.5s,
     background-color 0.5s;
