@@ -1,5 +1,4 @@
 <script setup lang="js">
-import GetLocation from './components/GetLocation.vue'
 import HeroComponent from './components/HeroComponent.vue'
 import MainNav from './components/MainNav.vue'
 import MainFooter from '@/components/MainFooter.vue'
@@ -10,10 +9,8 @@ import MainProyects from '@/components/MainProyects.vue'
   <header>
     <MainNav />
   </header>
-
   <div class="wrapper">
-    <HeroComponent msg="Terreneitor" />
-    <GetLocation />
+    <HeroComponent title="Terreneitor" />
     <MainProyects />
   </div>
   <MainFooter />
@@ -23,7 +20,6 @@ import MainProyects from '@/components/MainProyects.vue'
 .wrapper {
   max-width: 872px;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   margin: 25px auto;
