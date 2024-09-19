@@ -49,11 +49,13 @@ nav {
   width: 100%;
   height: 60px;
   background-color: rgba(97, 97, 97, 0.5);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
   font-size: 12px;
   text-align: center;
   align-items: center;
   justify-content: space-between;
+  z-index: 99;
 }
 aside {
   display: flex;
