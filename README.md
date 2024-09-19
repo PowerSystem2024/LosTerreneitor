@@ -35,6 +35,6 @@ Este repositorio incluye las lecciones de laboratorio de programación de la fac
 
 ---
 
-<div aling="center">
+<div align="center">
 Grupo "Los Terreneitor" 
 </div>
