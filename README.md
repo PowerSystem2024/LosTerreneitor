@@ -32,3 +32,9 @@ Este repositorio incluye las lecciones de laboratorio de programación de la fac
 | ![Python](https://img.shields.io/badge/Python-3670A0?logo=python&logoColor=ffdd54)                   | Programación         |
 | ![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?logo=java&logoColor=white)                   | Programación         |
 | ![Git](https://img.shields.io/badge/Git-%23F05033.svg?logo=git&logoColor=white)                      | Control de versiones |
+
+---
+
+<div aling="center">
+Grupo "Los Terreneitor" 
+</div>
