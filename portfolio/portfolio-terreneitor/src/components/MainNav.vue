@@ -91,7 +91,7 @@ nav {
   background-color: rgba(189, 139, 0, 0.659);
   border: 1px solid rgba(255, 166, 0, 0.782);
   padding: 2px 6px;
-  border-radius: 50px;
+  border-radius: 10px;
   font-weight: 600;
   font-size: 10px;
 }
@@ -114,9 +114,8 @@ a {
 }
 
 a:hover {
-  opacity: 0.8;
   background-color: rgba(97, 97, 97, 0.5);
-  border-radius: 10px;
+  border-radius: 8px;
   transition: 0.3s ease-in-out;
   color: rgb(189, 139, 0);
 }
@@ -157,8 +156,7 @@ a:hover {
     width: 100%;
     height: 100dvh;
     place-content: center;
-    background-color: rgba(32, 29, 29, 0.89);
-    backdrop-filter: blur(10px);
+    background-color: rgba(28, 27, 27, 0.941);
     flex-direction: column;
     padding: 1rem;
     display: none;

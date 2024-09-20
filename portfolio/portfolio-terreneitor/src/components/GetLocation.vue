@@ -36,6 +36,7 @@ h3 {
   text-align: center;
   font-size: 2.2rem;
   font-weight: 700;
+  padding: 4px;
 }
 span {
   font-size: 2.2rem;

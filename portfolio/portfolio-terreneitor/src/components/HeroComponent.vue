@@ -44,6 +44,13 @@ article {
   place-content: center;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgb(189, 139, 0);
+  text-shadow: 0 0 10px rgb(189, 139, 0);
+}
+
+@media (max-width: 700px) {
+  .main-title {
+    font-size: 3.8rem;
+  }
 }
 
 h3 {
