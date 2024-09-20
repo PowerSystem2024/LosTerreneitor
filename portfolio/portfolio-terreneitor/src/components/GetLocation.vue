@@ -25,7 +25,8 @@ onMounted(() => {
 
 <template>
   <h3 v-for="(location, index) in dataLocation" :key="index">
-    Nos complace recibirte desde {{ location.city.name }}, {{ location.country.name }} 👋
+    Nos complace recibirte desde
+    <span>{{ location.city.name }}, {{ location.country.name }}</span> 👋
   </h3>
 </template>
 
@@ -35,5 +36,10 @@ h3 {
   text-align: center;
   font-size: 2.2rem;
   font-weight: 700;
+}
+span {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: rgb(189, 139, 0);
 }
 </style>

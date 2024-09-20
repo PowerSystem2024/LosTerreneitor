@@ -95,6 +95,7 @@ aside a {
 
 aside a:hover {
   opacity: 0.6;
+  color: royalblue;
 }
 
 .github-icon {

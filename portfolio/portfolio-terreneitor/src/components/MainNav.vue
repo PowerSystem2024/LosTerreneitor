@@ -32,23 +32,28 @@ const toggleMenu = () => {
 
 <template>
   <nav>
-    <img
-      alt="Logo Terreneitor"
-      class="logo"
-      src="@/assets/logo-terreneitor-removebg.png"
-      width="75"
-      height="45"
-    />
-
+    <div class="logo-container">
+      <img
+        alt="Logo Terreneitor"
+        class="logo"
+        src="@/assets/logo-terreneitor-removebg.png"
+        width="80"
+        height="50"
+      />
+      <span>BETA</span>
+    </div>
     <button class="menu-btn" @click="toggleMenu">
-      <AlignRight class="menu-icon" />
-      <X class="x-icon" />
+      <AlignRight v-if="!isMenuOpen" class="menu-icon" />
+      <X v-if="isMenuOpen" class="x-icon" />
     </button>
 
     <aside :class="{ open: isMenuOpen }">
       <li v-for="(item, index) in navItems" :key="index">
-        <RouterLink :to="item.path">{{ item.name }}</RouterLink>
+        <RouterLink class="link" :to="item.path">{{ item.name }}</RouterLink>
       </li>
+      <footer v-if="isMenuOpen">
+        <p>&copy;Terreneitor - UTN-FRSR {{ new Date().getFullYear() }}</p>
+      </footer>
     </aside>
   </nav>
 </template>
@@ -72,6 +77,25 @@ nav {
   padding: 0 1rem;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-container span {
+  background-color: rgba(189, 139, 0, 0.659);
+  border: 1px solid rgba(255, 166, 0, 0.782);
+  padding: 2px 6px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 10px;
+}
+
 aside {
   display: flex;
   margin-right: 2rem;
@@ -86,6 +110,15 @@ a {
   color: #ddd;
   text-decoration: none;
   font-size: 1rem;
+  padding: 2px 8px 3px 8px;
+}
+
+a:hover {
+  opacity: 0.8;
+  background-color: rgba(97, 97, 97, 0.5);
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  color: rgb(189, 139, 0);
 }
 
 .menu-btn {
@@ -95,12 +128,21 @@ a {
   z-index: 99;
 }
 
-.menu-icon {
+.menu-icon,
+.x-icon {
   color: #ddd;
 }
 
 .x-icon {
-  display: none;
+  transform: rotate(-45deg);
+  animation: spin 0.4s linear both;
+  transition: transform 0.3s;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(90deg);
+  }
 }
 
 @media (max-width: 700px) {
@@ -115,7 +157,7 @@ a {
     width: 100%;
     height: 100dvh;
     place-content: center;
-    background-color: rgba(112, 112, 112, 0.696);
+    background-color: rgba(32, 29, 29, 0.89);
     backdrop-filter: blur(10px);
     flex-direction: column;
     padding: 1rem;
@@ -126,8 +168,15 @@ a {
     display: flex;
   }
 
-  aside.open .menu-icon {
-    display: none;
+  aside.open .link {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  aside.open footer p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(189, 139, 0);
   }
 
   aside li {
