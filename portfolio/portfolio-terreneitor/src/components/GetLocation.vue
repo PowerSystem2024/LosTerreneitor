@@ -26,7 +26,7 @@ onMounted(() => {
 <template>
   <h3 v-for="(location, index) in dataLocation" :key="index">
     Nos complace recibirte desde
-    <span>{{ location.city.name }}, {{ location.country.name }}</span> 👋
+    <span class="gradient">{{ location.city.name }}, {{ location.country.name }}</span> 👋
   </h3>
 </template>
 
@@ -42,5 +42,11 @@ span {
   font-size: 2.2rem;
   font-weight: 700;
   color: rgb(189, 139, 0);
+}
+.gradient {
+  background-image: linear-gradient(260deg, var(--purple), var(--green));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
 }
 </style>

@@ -66,7 +66,7 @@ nav {
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: rgba(97, 97, 97, 0.5);
+  background-color: var(--color-nav);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
   font-size: 12px;
@@ -88,12 +88,13 @@ nav {
 }
 
 .logo-container span {
-  background-color: rgba(189, 139, 0, 0.659);
-  border: 1px solid rgba(255, 166, 0, 0.782);
+  background-color: var(--green-light);
+  border: 1px solid var(--green);
   padding: 2px 6px;
   border-radius: 10px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 10px;
+  color: var(--color-text);
 }
 
 aside {
@@ -107,9 +108,10 @@ aside li {
 }
 
 a {
-  color: #ddd;
+  color: var(--color-text);
   text-decoration: none;
   font-size: 1rem;
+  font-weight: 600;
   padding: 2px 8px 3px 8px;
 }
 

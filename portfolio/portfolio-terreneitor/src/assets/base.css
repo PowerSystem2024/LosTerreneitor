@@ -7,10 +7,14 @@
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
   --vt-c-white-mute: #f2f2f2;
+  --vt-c-white-card-mute: #f2f2f2;
+  --vt-c-white-nav: rgba(214, 214, 214, 0.642);
 
-  --vt-c-black: #181818;
+  --vt-c-black: #121212;
   --vt-c-black-soft: #222222;
   --vt-c-black-mute: #282828;
+  --vt-c-black-card-mute: #181818;
+  --vt-c-black-nav: rgba(70, 70, 70, 0.5);
 
   --vt-c-indigo: #2c3e50;
 
@@ -30,6 +34,9 @@
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
+  --color-nav: var(--vt-c-white-nav);
+
+  --color-card: var(--vt-c-white-card-mute);
 
   --color-border: var(--vt-c-divider-light-2);
   --color-border-hover: var(--vt-c-divider-light-1);
@@ -38,6 +45,14 @@
   --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 160px;
+
+  --black: #000000;
+  --blue: #1a2233;
+  --purple: #7026f4;
+  --yellow: #fef878;
+  --pink: #e0a4bf;
+  --green: #3cff64;
+  --green-light: rgba(60, 255, 100, 0.7);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,6 +60,9 @@
     --color-background: var(--vt-c-black);
     --color-background-soft: var(--vt-c-black-soft);
     --color-background-mute: var(--vt-c-black-mute);
+
+    --color-nav: var(--vt-c-black-nav);
+    --color-card: var(--vt-c-black-card-mute);
 
     --color-border: var(--vt-c-divider-dark-2);
     --color-border-hover: var(--vt-c-divider-dark-1);
