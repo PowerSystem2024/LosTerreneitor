@@ -94,7 +94,7 @@ body {
 
 body::before {
   --dot-color: hsla(0, 0%, 39%, 0.15);
-  --dot-size: 10px;
+  --dot-size: 2px;
   --dot-gap: 20px;
   content: '';
   height: 100vh;

@@ -12,7 +12,6 @@ import MainProyects from '@/components/MainProyects.vue'
   <section class="wrapper">
     <HeroComponent title="Terreneitor" />
   </section>
-  <hr class="hr" />
   <section class="wrapper">
     <MainProyects />
   </section>

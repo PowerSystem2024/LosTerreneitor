@@ -45,6 +45,7 @@ article {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgb(189, 139, 0);
   text-shadow: 0 0 10px rgb(189, 139, 0);
+  -webkit-box-reflect: below -85px linear-gradient(to bottom, transparent, rgba(222, 222, 222, 0.15));
 }
 
 @media (max-width: 700px) {

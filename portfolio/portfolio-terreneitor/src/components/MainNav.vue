@@ -118,6 +118,7 @@ a:hover {
   border-radius: 8px;
   transition: 0.3s ease-in-out;
   color: rgb(189, 139, 0);
+  text-shadow: 0 0 5px rgba(255, 166, 0, 0.782);
 }
 
 .menu-btn {
