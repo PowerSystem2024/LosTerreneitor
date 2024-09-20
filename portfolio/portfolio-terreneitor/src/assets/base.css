@@ -91,3 +91,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+body::before {
+  --dot-color: hsla(0, 0%, 39%, 0.15);
+  --dot-size: 10px;
+  --dot-gap: 20px;
+  content: '';
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: radial-gradient(var(--dot-color) var(--dot-size), transparent var(--dot-size)) 0 0 /
+    var(--dot-gap) var(--dot-gap);
+  mask: linear-gradient(-15deg, transparent 15%, white);
+  top: 0;
+  transform-style: flat;
+  pointer-events: none;
+  z-index: 0;
+}

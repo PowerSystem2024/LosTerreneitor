@@ -9,10 +9,13 @@ import MainProyects from '@/components/MainProyects.vue'
   <header>
     <MainNav />
   </header>
-  <div class="wrapper">
+  <section class="wrapper">
     <HeroComponent title="Terreneitor" />
+  </section>
+  <hr class="hr" />
+  <section class="wrapper">
     <MainProyects />
-  </div>
+  </section>
   <MainFooter />
 </template>
 
