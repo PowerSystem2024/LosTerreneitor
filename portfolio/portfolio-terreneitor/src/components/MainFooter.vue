@@ -1,5 +1,6 @@
 <template>
   <footer>
+    <!-- Se obtiene el año actual con new Date().getFullYear() -->
     <small>&copy;Terreneitor UTN-FRSR {{ new Date().getFullYear() }}</small>
   </footer>
 </template>

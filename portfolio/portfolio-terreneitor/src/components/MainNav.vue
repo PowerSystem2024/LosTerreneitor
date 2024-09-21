@@ -73,8 +73,8 @@ nav {
   text-align: center;
   align-items: center;
   justify-content: space-between;
+  padding: 0 1rem 0 0;
   z-index: 99;
-  padding: 0 1rem;
 }
 
 .logo-container {
@@ -119,8 +119,8 @@ a:hover {
   background-color: rgba(97, 97, 97, 0.5);
   border-radius: 8px;
   transition: 0.3s ease-in-out;
-  color: rgb(189, 139, 0);
-  text-shadow: 0 0 5px rgba(255, 166, 0, 0.782);
+  color: var(--green-light);
+  text-shadow: 0 0 5px var(--green-light);
 }
 
 .menu-btn {

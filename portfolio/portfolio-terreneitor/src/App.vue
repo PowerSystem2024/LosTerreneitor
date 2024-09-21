@@ -5,6 +5,7 @@ import MainNav from './components/MainNav.vue'
 import MainFooter from '@/components/MainFooter.vue'
 import MainProyects from '@/components/MainProyects.vue'
 import SectionTitle from './components/SectionTitle.vue'
+import UnderConstruction from './components/UnderConstruction.vue'
 </script>
 
 <template>
@@ -13,14 +14,13 @@ import SectionTitle from './components/SectionTitle.vue'
   </header>
   <section class="wrapper">
     <HeroComponent title="Terreneitor" />
-  </section>
-  <section class="wrapper">
+
     <SectionTitle title="Proyectos" />
     <MainProyects />
-  </section>
-  <section class="wrapper">
+
     <SectionTitle title="Integrantes del Grupo" />
     <GroupMembers />
+    <UnderConstruction msg="Web en Construcción..." />
   </section>
   <MainFooter />
 </template>

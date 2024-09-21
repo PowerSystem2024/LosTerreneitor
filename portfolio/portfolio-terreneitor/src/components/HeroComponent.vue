@@ -29,7 +29,7 @@ article {
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 .main-title {
@@ -50,6 +50,13 @@ article {
   -webkit-text-fill-color: transparent;
 }
 
+h3 {
+  padding: 4px;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
 @media (max-width: 700px) {
   .main-title {
     font-size: 3.8rem;
@@ -60,12 +67,5 @@ article {
   h3 {
     font-size: 1.5rem;
   }
-}
-
-h3 {
-  padding: 4px;
-  text-align: center;
-  font-size: 2.2rem;
-  font-weight: 800;
 }
 </style>

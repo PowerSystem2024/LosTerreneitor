@@ -43,7 +43,7 @@ groupMembers.value = members
     <div v-for="(member, index) in groupMembers" :key="index">
       <a :href="member.url" class="avatar-container">
         <img :src="member.avatar" :alt="member.name" />
-        <small>{{ member.name }}</small>
+        <p class="name">{{ member.name }}</p>
       </a>
     </div>
   </section>
@@ -54,6 +54,7 @@ section {
   display: flex;
   width: 100%;
   padding: 10px;
+  margin: 50px auto;
 }
 
 .grid {
@@ -77,6 +78,18 @@ img {
   border-radius: 50%;
 }
 
+.name {
+  font-weight: 700;
+  transition: transform 0.6s ease;
+}
+
+.avatar-container:hover .name {
+  background-image: linear-gradient(260deg, var(--purple), var(--green));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.6s ease;
+}
+
 img:hover {
   animation: 1.3s infinite alternate zoomin;
 }
@@ -88,10 +101,5 @@ img:hover {
   to {
     transform: scale(1.2);
   }
-}
-
-small {
-  font-weight: 600;
-  text-align: center;
 }
 </style>
