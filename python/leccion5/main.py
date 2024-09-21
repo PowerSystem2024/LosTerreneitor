@@ -76,3 +76,13 @@ def listar_nombres(*nombres):  # Normalmente se utiliza *args
 
 listar_nombres("Mario", "Gabriel", "Agustin")
 listar_nombres("Carlos", "Gerardo", "Lidia")
+
+
+def listarTerminos(
+    **terminos,
+):  # Lo más utilizado son los **kwargs para recibir los argumentos
+    for llave, valor in terminos.items():  # kwargs: significa key word argument
+        print(f"{llave}: {valor}")
+
+
+listarTerminos(IDE="Integrated Development Enviroment", PK="Primary Key")

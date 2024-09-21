@@ -10,7 +10,7 @@ defineProps<{
     <h1 class="main-title">{{ title }}</h1>
     <article>
       <h3>
-        Este es el portafolio web del grupo Los Terreneitor de la Tecnicatura Universitaria en
+        Bienvenidos al portafolio web del grupo Los Terreneitor de la Tecnicatura Universitaria en
         Programación Cohorte 2024 UTN-FRSR.
       </h3>
     </article>
@@ -22,28 +22,50 @@ defineProps<{
 .hero {
   margin: 24px 0;
 }
+
 article {
   max-width: 872px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  text-wrap: pretty;
+  text-wrap: balance;
 }
+
 .main-title {
-  margin: 45px 0;
-  font-size: 3.2rem;
+  margin: 50px 0;
+  font-size: 6rem;
   font-weight: 800;
   text-decoration: none;
-  color: rgb(189, 139, 0);
+  color: transparent;
   transition: 0.4s;
   padding: 3px;
   display: flex;
   place-content: center;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--color-text);
+  -webkit-box-reflect: below -85px linear-gradient(to bottom, transparent, rgba(222, 222, 222, 0.15));
+  background-image: linear-gradient(260deg, var(--purple), var(--green));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 h3 {
+  padding: 4px;
   text-align: center;
   font-size: 2.2rem;
-  font-weight: 700;
+  font-weight: 800;
+}
+
+@media (max-width: 700px) {
+  .main-title {
+    font-size: 3.8rem;
+    -webkit-box-reflect: below -50px linear-gradient(to bottom, transparent, rgba(222, 222, 222, 0.15));
+    background-image: linear-gradient(260deg, var(--purple), var(--green));
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
 }
 </style>

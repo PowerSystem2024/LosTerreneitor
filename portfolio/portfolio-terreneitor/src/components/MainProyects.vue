@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { Github, ArrowUpRight } from 'lucide-vue-next'
 
-const proyects = ref([])
+const proyects = ref([]) // Esto es un hook de Vue.js parecido a useState de React
 const items = [
   {
     name: 'Proyecto Python',
@@ -26,13 +26,15 @@ const items = [
     description: 'Este es nuestro proyecto creado en Java para la Universidad.'
   }
 ]
-proyects.value = items
+proyects.value = items // Se pasa el valor del array al hook proyects
 </script>
 
 <template>
   <section class="proyect-grid">
+    <!-- Se itera el array proyects en cada elemento con v-for de Vue -->
     <div class="proyect-container" v-for="(proyect, index) in proyects" :key="index">
       <article class="proyect">
+        <!-- La interpolación en Vue para iterar elementos dentro de un atributo es :src -->
         <img :src="proyect.img" width="100%" height="auto" :alt="proyect.name" />
         <h2>{{ proyect.name }}</h2>
         <p class="description">{{ proyect.description }}</p>
@@ -50,7 +52,7 @@ proyects.value = items
     </div>
   </section>
 </template>
-
+// El estilo se aplica en scoped para éste componente en particular
 <style lang="css" scoped>
 .proyect-grid {
   display: grid;
@@ -61,10 +63,11 @@ proyects.value = items
 }
 
 .proyect-container {
-  background-color: #ddd;
+  background-color: var(--color-card);
   border-radius: 10px;
   padding: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 9;
 }
 
 .proyect {
@@ -73,12 +76,19 @@ proyects.value = items
   border-radius: 10px;
 }
 
+h2 {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
 img {
   border-radius: 10px;
 }
 
 .description {
+  margin: 10px auto;
   height: 80px;
+  color: var(--color-text);
 }
 
 aside {
@@ -90,11 +100,12 @@ aside {
 aside a {
   text-decoration: none;
   align-items: center;
-  color: #010409;
+  color: var(--color-text);
 }
 
 aside a:hover {
   opacity: 0.6;
+  color: royalblue;
 }
 
 .github-icon {

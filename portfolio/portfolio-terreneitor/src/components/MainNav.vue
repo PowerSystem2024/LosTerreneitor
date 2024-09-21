@@ -32,23 +32,28 @@ const toggleMenu = () => {
 
 <template>
   <nav>
-    <img
-      alt="Logo Terreneitor"
-      class="logo"
-      src="@/assets/logo-terreneitor-removebg.png"
-      width="75"
-      height="45"
-    />
-
+    <div class="logo-container">
+      <img
+        alt="Logo Terreneitor"
+        class="logo"
+        src="@/assets/logo-terreneitor-removebg.png"
+        width="80"
+        height="50"
+      />
+      <span>BETA</span>
+    </div>
     <button class="menu-btn" @click="toggleMenu">
-      <AlignRight class="menu-icon" />
-      <X class="x-icon" />
+      <AlignRight v-if="!isMenuOpen" class="menu-icon" />
+      <X v-if="isMenuOpen" class="x-icon" />
     </button>
 
     <aside :class="{ open: isMenuOpen }">
       <li v-for="(item, index) in navItems" :key="index">
-        <RouterLink :to="item.path">{{ item.name }}</RouterLink>
+        <a class="link" :href="item.path">{{ item.name }}</a>
       </li>
+      <footer v-if="isMenuOpen">
+        <p>&copy;Terreneitor - UTN-FRSR {{ new Date().getFullYear() }}</p>
+      </footer>
     </aside>
   </nav>
 </template>
@@ -61,15 +66,35 @@ nav {
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: rgba(97, 97, 97, 0.5);
+  background-color: var(--color-nav);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
   font-size: 12px;
   text-align: center;
   align-items: center;
   justify-content: space-between;
+  padding: 0 1rem 0 0;
   z-index: 99;
-  padding: 0 1rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-container span {
+  background-color: var(--green-light);
+  border: 1px solid var(--green);
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 10px;
+  color: var(--color-text);
 }
 
 aside {
@@ -83,9 +108,19 @@ aside li {
 }
 
 a {
-  color: #ddd;
+  color: var(--color-text);
   text-decoration: none;
   font-size: 1rem;
+  font-weight: 600;
+  padding: 2px 8px 3px 8px;
+}
+
+a:hover {
+  background-color: rgba(97, 97, 97, 0.5);
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+  color: var(--green-light);
+  text-shadow: 0 0 5px var(--green-light);
 }
 
 .menu-btn {
@@ -95,12 +130,21 @@ a {
   z-index: 99;
 }
 
-.menu-icon {
+.menu-icon,
+.x-icon {
   color: #ddd;
 }
 
 .x-icon {
-  display: none;
+  transform: rotate(-45deg);
+  animation: spin 0.4s linear both;
+  transition: transform 0.3s;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(90deg);
+  }
 }
 
 @media (max-width: 700px) {
@@ -115,8 +159,7 @@ a {
     width: 100%;
     height: 100dvh;
     place-content: center;
-    background-color: rgba(112, 112, 112, 0.696);
-    backdrop-filter: blur(10px);
+    background-color: rgba(28, 27, 27, 0.941);
     flex-direction: column;
     padding: 1rem;
     display: none;
@@ -126,8 +169,15 @@ a {
     display: flex;
   }
 
-  aside.open .menu-icon {
-    display: none;
+  aside.open .link {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  aside.open footer p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(189, 139, 0);
   }
 
   aside li {
