@@ -78,6 +78,7 @@ h2 {
 
 table {
   margin: 50px auto;
+  text-align: center;
 }
 
 th, td {
