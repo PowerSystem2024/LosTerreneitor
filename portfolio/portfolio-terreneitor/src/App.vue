@@ -20,7 +20,7 @@ import UnderConstruction from './components/UnderConstruction.vue'
 
     <SectionTitle title="Integrantes del Grupo" />
     <GroupMembers />
-    <UnderConstruction msg="Web en Construcción..." />
+    <UnderConstruction msg="Esta web se encuentra en construcción..." />
   </section>
   <MainFooter />
 </template>

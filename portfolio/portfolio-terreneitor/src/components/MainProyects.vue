@@ -34,7 +34,7 @@ proyects.value = items // Se pasa el valor del array al hook proyects
     <!-- Se itera el array proyects en cada elemento con v-for de Vue -->
     <div class="proyect-container" v-for="(proyect, index) in proyects" :key="index">
       <article class="proyect">
-        <!-- La interpolación en Vue para iterar elementos dentro de un atributo es :src por ejemplo -->
+        <!-- La interpolación en Vue para iterar elementos dentro de un atributo es :src -->
         <img :src="proyect.img" width="100%" height="auto" :alt="proyect.name" />
         <h2>{{ proyect.name }}</h2>
         <p class="description">{{ proyect.description }}</p>

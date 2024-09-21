@@ -49,7 +49,7 @@ const toggleMenu = () => {
 
     <aside :class="{ open: isMenuOpen }">
       <li v-for="(item, index) in navItems" :key="index">
-        <RouterLink class="link" :to="item.path">{{ item.name }}</RouterLink>
+        <a class="link" :href="item.path">{{ item.name }}</a>
       </li>
       <footer v-if="isMenuOpen">
         <p>&copy;Terreneitor - UTN-FRSR {{ new Date().getFullYear() }}</p>

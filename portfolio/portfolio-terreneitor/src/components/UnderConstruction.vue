@@ -6,13 +6,18 @@ defineProps<{
 </script>
 
 <template>
-  <div class="card-container">
-    <Construction class="construction-icon" />
-    <h1 class="msg">{{ msg }}</h1>
-  </div>
+  <article>
+    <div class="card-container">
+      <Construction class="construction-icon" />
+      <h1 class="msg">{{ msg }}</h1>
+    </div>
+  </article>
 </template>
 
 <style lang="css" scoped>
+article {
+  padding-inline: 16px;
+}
 .card-container {
   display: flex;
   padding: 16px;
@@ -39,7 +44,8 @@ defineProps<{
 }
 
 .construction-icon {
-  color: #121212;
+  color: #f7e018;
+  margin-right: 4px;
   width: 24px;
   height: 24px;
 }
