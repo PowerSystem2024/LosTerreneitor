@@ -1,12 +1,12 @@
 <script setup lang="ts">
 defineProps<{
-  title: string
+  text: string
 }>()
 </script>
 
 <template>
   <div>
-    <h2 class="title">{{ title }}</h2>
+    <h2 class="title">{{ text }}</h2>
   </div>
 </template>
 

@@ -1,20 +1,17 @@
-<script setup lang="ts">
-import GetLocation from './GetLocation.vue'
-defineProps<{
-  title: string
-}>()
+<script setup lang="js">
+import WelcomeLocation from './WelcomeLocation.vue'
 </script>
 
 <template>
   <div class="hero">
-    <h1 class="main-title">{{ title }}</h1>
+    <h1 class="main-title">Terreneitor</h1>
     <article>
       <h3>
         Bienvenidos al portafolio web del grupo Los Terreneitor de la Tecnicatura Universitaria en
         Programación Cohorte 2024 UTN-FRSR.
       </h3>
     </article>
-    <GetLocation />
+    <WelcomeLocation />
   </div>
 </template>
 
