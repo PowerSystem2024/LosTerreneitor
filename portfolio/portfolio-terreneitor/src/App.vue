@@ -6,6 +6,7 @@ import MainFooter from '@/components/MainFooter.vue'
 import MainProyects from '@/components/MainProyects.vue'
 import SectionTitle from './components/SectionTitle.vue'
 import UnderConstruction from './components/UnderConstruction.vue'
+import WeatherComponent from './components/WeatherComponent.vue'
 </script>
 
 <template>
@@ -13,15 +14,16 @@ import UnderConstruction from './components/UnderConstruction.vue'
     <MainNav />
   </header>
   <section class="wrapper">
-    <HeroComponent title="Terreneitor" />
+    <HeroComponent />
 
-    <SectionTitle title="Proyectos" />
+    <SectionTitle text="Proyectos" />
     <MainProyects />
 
-    <SectionTitle title="Integrantes del Grupo" />
+    <SectionTitle text="Integrantes del Grupo" />
     <GroupMembers />
     <UnderConstruction msg="Esta web se encuentra en construcción..." />
   </section>
+  <WeatherComponent />
   <MainFooter />
 </template>
 
