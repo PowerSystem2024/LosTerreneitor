@@ -39,7 +39,7 @@ export const proyectsItems = [
     description: 'Este es nuestro proyecto de Python creado para la UTN-FRSR.'
   },
   {
-    name: 'Proyecto JS',
+    name: 'Proyecto JavaScript',
     img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     link: 'https://elproyecto.qui',
     code: 'https://github.com/Terreneitor',

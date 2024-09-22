@@ -1,14 +1,15 @@
 <script setup lang="js">
 import { proyectsItems } from './constants.vue'
 import { Github, ArrowUpRight } from 'lucide-vue-next'
+import { useMatchMedia } from './useMatchMedia'
+
+const isMobile = useMatchMedia('(max-width: 700px)')
 </script>
 
 <template>
-  <section class="proyect-grid">
-    <!-- Se itera el array proyects en cada elemento con v-for de Vue -->
+  <section v-if="!isMobile" class="proyect-grid">
     <div class="proyect-container" v-for="(proyect, index) in proyectsItems" :key="index">
       <article class="proyect">
-        <!-- La interpolación en Vue para iterar elementos dentro de un atributo es :src -->
         <img :src="proyect.img" width="100%" height="auto" :alt="proyect.name" />
         <h2>{{ proyect.name }}</h2>
         <p class="description">{{ proyect.description }}</p>
@@ -17,8 +18,27 @@ import { Github, ArrowUpRight } from 'lucide-vue-next'
             <Github class="github-icon" />
             Code
           </a>
-          <a :href="proyect.link"
-            >Link
+          <a :href="proyect.link">
+            Link
+            <ArrowUpRight class="arrow-up-rigth-icon" />
+          </a>
+        </aside>
+      </article>
+    </div>
+  </section>
+  <section v-else class="mobile-scroll">
+    <div class="proyect-container" v-for="(proyect, index) in proyectsItems" :key="index">
+      <article class="proyect">
+        <img :src="proyect.img" width="100%" height="auto" :alt="proyect.name" />
+        <h2>{{ proyect.name }}</h2>
+        <p class="description">{{ proyect.description }}</p>
+        <aside>
+          <a :href="proyect.code">
+            <Github class="github-icon" />
+            Code
+          </a>
+          <a :href="proyect.link">
+            Link
             <ArrowUpRight class="arrow-up-rigth-icon" />
           </a>
         </aside>
@@ -26,7 +46,7 @@ import { Github, ArrowUpRight } from 'lucide-vue-next'
     </div>
   </section>
 </template>
-// El estilo se aplica en scoped para éste componente en particular
+
 <style lang="css" scoped>
 .proyect-grid {
   display: grid;
@@ -42,6 +62,20 @@ import { Github, ArrowUpRight } from 'lucide-vue-next'
   padding: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 9;
+}
+
+.mobile-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 16px;
+  scroll-snap-type: x mandatory;
+}
+
+.mobile-scroll .proyect-container {
+  flex: 0 0 auto;
+  width: 80%;
+  scroll-snap-align: start;
 }
 
 .proyect {
@@ -71,6 +105,7 @@ aside {
   justify-content: space-between;
   align-items: center;
 }
+
 aside a {
   text-decoration: none;
   align-items: center;
@@ -82,11 +117,7 @@ aside a:hover {
   color: royalblue;
 }
 
-.github-icon {
-  width: 16px;
-  height: 16px;
-  transform: translateY(2px);
-}
+.github-icon,
 .arrow-up-rigth-icon {
   width: 16px;
   height: 16px;
