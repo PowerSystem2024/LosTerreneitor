@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue'
 
 import { kelvintoCelsius, getWeatherIcon, mapCondition } from './constants.vue'
 import { getLocation } from './GetLocation.vue'
+import LoaderComponent from './LoaderComponent.vue'
 
 const dataAPI = ref([])
 
@@ -21,12 +22,17 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section>
+  <section v-if="dataAPI.length === 0">
+    <div class="loader-component">
+      <LoaderComponent />
+    </div>
+  </section>
+  <section v-else>
     <div v-for="(data, index) in dataAPI" :key="index" class="weather-container">
       <div class="title">
         <h2>El clima en {{ data.name }}</h2>
         <img :src="getWeatherIcon(data.weather[0].icon)" alt="Icono del Clima" class="image-icon" />
-        <span>{{ kelvintoCelsius(data.main.temp).toFixed(1) }}°</span>
+        <h2>{{ kelvintoCelsius(data.main.temp).toFixed(1) }}°</h2>
       </div>
       <div class="data-weather-grid">
         <div class="grid-item">
@@ -70,6 +76,11 @@ section {
   margin-bottom: 10px;
 }
 
+h1 {
+  text-align: center;
+  margin: 80px auto;
+}
+
 h2 {
   text-align: center;
 }
@@ -102,5 +113,11 @@ h2 {
 
 strong {
   margin-bottom: 5px;
+}
+
+.loader-component {
+  display: flex;
+  justify-content: center;
+  margin: 150px auto;
 }
 </style>

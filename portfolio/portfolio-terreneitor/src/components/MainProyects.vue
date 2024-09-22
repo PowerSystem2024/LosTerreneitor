@@ -1,7 +1,7 @@
 <script setup lang="js">
 import { proyectsItems } from './constants.vue'
 import { Github, ArrowUpRight } from 'lucide-vue-next'
-import { useMatchMedia } from './useMatchMedia'
+import { useMatchMedia } from '../hook/UseMatchMedia'
 
 const isMobile = useMatchMedia('(max-width: 700px)')
 </script>
