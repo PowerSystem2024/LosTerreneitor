@@ -13,10 +13,8 @@
 
 - Agustín Salinas
 - Juan Pablo Batallón Costa
-- Franco Morales
 - Maximiliano Tomio
 - Elias Jacob
-- Gabriel Calcagni
 
 `Este grupo pertenece a la UTN Facultad Regional San Rafael (Mendoza) - Cohorte 2024`
 
