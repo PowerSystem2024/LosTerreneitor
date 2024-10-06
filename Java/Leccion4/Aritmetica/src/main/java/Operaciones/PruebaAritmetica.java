@@ -8,9 +8,9 @@ public class PruebaAritmetica {
         // aritmetica1.sumarNumeros();
         
         int resultado = aritmetica1.sumarConRetorno();
-        System.out.println("El resultado es: "+resultado);
+        System.out.println("El resultado es: " + resultado);
         
         resultado = aritmetica1.sumarConArgumentos(8, 9);
-        System.out.println("Resultado con argumentos: "+resultado);
+        System.out.println("Resultado con argumentos: " + resultado);
     }
 }
