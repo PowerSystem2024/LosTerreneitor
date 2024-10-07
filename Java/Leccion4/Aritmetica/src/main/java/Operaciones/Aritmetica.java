@@ -7,7 +7,7 @@ public class Aritmetica {
     int a, b;
 
     // El constructor es un método especial
-    public Aritmetica (){
+    public Aritmetica (){ //constructor 1 vacio
        System.out.println("Se está ejecutando el constructor número 1");
     }
     
