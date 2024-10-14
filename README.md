@@ -20,7 +20,7 @@
 
 ## ¿Qué incluye este repositorio?
 
-Este repositorio incluye las lecciones de laboratorio de programación de la facultad en la cual estamos viendo los siguientes lenguajes de programación:
+Este repositorio incluye las lecciones de laboratorio de programación de la facultad donde estamos viendo los siguientes lenguajes de programación:
 
 | Lenguaje                                                                                             | Descripción          |
 | ---------------------------------------------------------------------------------------------------- | -------------------- |
