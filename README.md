@@ -13,7 +13,7 @@
 
 - Agustín Salinas
 - Juan Pablo Batallón Costa
-- Maximiliano Tomio
+- Maximiliano David Tomio
 - Elias Jacob
 
 `Este grupo pertenece a la UTN Facultad Regional San Rafael (Mendoza) - Cohorte 2024`
