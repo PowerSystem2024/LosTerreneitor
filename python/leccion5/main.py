@@ -1,88 +1,117 @@
-# Desempaquetado de listas, tuplas o diccionarios o List unpacking
-def show(name, last_name):
-    print(name + " " + last_name)
+# Comenzamos con Funciones
 
+# Definimos una Función.
 
-person = ["Gabriel", "Calcagni"]
-show(person[0], person[1])  # Pasamo uno por uno los datos de la lista
+#mi_funcion()  # No se puede llamar antes de definir una función.
+def mi_funcion():  # def es la palabra reservada
+  print("Saludos a todos los chicos de Los Terreneitor.")
 
-# Otra forma resumida, se le pasa todo junto
-person2 = ["Mario", "Meza"]
+mi_funcion()  # Estamos llamando a la función
+mi_funcion()  # Se puede llamar a una función N cantidad de veces
+
+# Desempaquetado de listas o list Unpacking
+def show(name, lastName):
+  print(name+" "+lastName)
+
+person = ["Martín", "Pescador"]
+show(person[0], person[1])  # Pasamos uno por uno los datos de la lista a la función
+show(*person)  # Esto es lo mismo que la anterior, pero lo pasamos todo junto.
+
+person2 = ("Pedro", "Picapiedra")  # Desempaquetamos a través de una tupla.
 show(*person2)
 
-# Mostramos los elementos de un diccionario
-person3 = {"last_name": "Calcagni", "name": "Agustin"}
+person3 = {"lastName": "Simpson", "name": "Homero"}  # Diccionario
 show(**person3)
 
-# for else
-numbers = [1, 2, 3, 4, 5, 6]
+
+numbers = [1, 2, 3, 4, 5]  # Aún con la lista vacía se va a ejecutar el else.
 for n in numbers:
-    if n == 3:
-        break  # Esta es la única manera de que no se ejecute el else
-    print(n)
+  print(n)
+  if n == 3:
+    break  # Ésta es la única manera para que no se ejecute el else
 else:
-    print("Esto termina")
+  print("Esto se terminó.")
 
-# Lista de compresión / List comprehension
-names = ["Paolo", "Rodrigo", "Lupe", "Pepe"]
-along_p = [p for p in names if p[0] == "P"]
-print(along_p)
+# List comprehension, lista de comprensión
+names = ["Pedro", "Andrés", "Julián", "Pablo", "Marisa"]
+alongP = [p for p in names if p[0] == "P"]  # Esto regresa una nueva lista
+print(alongP)
 
-beers = [
-    {"name": "Quilmes", "country": "Argentina"},
-    {"name": "Corona", "country": "México"},
-    {"name": "Stella Artois", "country": "Belgica"},
-]
+bottleC = [{"name": "Quilmes", "country": "Arg"},
+           {"name": "Corona", "country": "Mx"},
+           {"name": "Stella Artois", "country": "Belgium"},
+           ]
 
-arg = [b for b in beers if b["country"] == "Argentina"]
-print(arg)
-print(beers)
+Arg = [b for b in bottleC if b["country"] == "Arg"]
 
-# Funciones con paso de argumentos
+print(Arg)
+print(bottleC)
 
 
-def funcion_2(name, lastname):
-    print("Saludos desde la consola de Python!")
-    print(f"Nombre: {name}, Apellido: {lastname}")
-
-
-funcion_2("Juan", "Carlo")
+# Paso de Argumentos (funciones)
+def mi_funcion2(name, lastName):
+  print("Aguante Los Terreneitor!")
+  print(f"Nombre: {name}, Apellido: {lastName}")
+mi_funcion2("Batallón Costa", "Juan Pablo")
+mi_funcion2("Jacob", "Elías")
+mi_funcion2("Salinas", "Agustín")
+mi_funcion2("Tomio", "Maximiliano")
 
 
 # La palabra return en funciones
+# Creamos una función para sumar
 def sumar(a, b):
-    return a + b
+  return a + b
+#resultado = sumar(78, 22)
+#print(f"El resultado de la suma es: {resultado}")
+print(f"El resultado de la suma es: {sumar(35, 65)}")
 
-
-resultado = sumar(6, 9)
-print(f"El resultado es {resultado}")
-
-
-# Funciones valores por default en los argumentos
-def sumar_2(a=0, b=0) -> int:
-    return a + b
-
-
-resultado = sumar_2()
-print(f"La suma es {resultado}")
-print(f"La suma es {sumar_2(66, 20)}")
+def sumar2(a = 0, b = 0):
+  return a + b
+resultado = sumar2()
+print(f"Resultado de la suma: {resultado}")
+print(f"Resultado de la suma: {sumar2(22, 33)}")
 
 
 # Argumentos, variables en funciones
-def listar_nombres(*nombres):  # Normalmente se utiliza *args
-    for nombre in nombres:
-        print(nombre)
+def listarNombres(*nombres):  # Normalmente se utiliza:  *args
+  for nombre in nombres:  # Se va a convertir en una tupla
+    print(nombre)
+listarNombres("Andrés", "Mario", "Juliana", "Verónica", "Ismael")
+listarNombres("Pedro", "Romina", "José", "Carlos", "Josefina")
 
 
-listar_nombres("Mario", "Gabriel", "Agustin")
-listar_nombres("Carlos", "Gerardo", "Lidia")
+def listarTerminos(**terminos):  # Normalmente se utiliza el argumento de **kwargs (significa key word argument)
+  for llave, valor in terminos.items():
+    print(f"{llave}: {valor}")
+
+listarTerminos()  # Al no recibir argumentos (), no se va a mostrar nada en consola.
+listarTerminos(IDE = "Integrated Development Enviroment", PK = "Primary Key")
+#listarTerminos(10 = "Lionel Messi")  # Puede recibir un tipo de dato en el valor, pero no en la llave.
 
 
-def listarTerminos(
-    **terminos,
-):  # Lo más utilizado son los **kwargs para recibir los argumentos
-    for llave, valor in terminos.items():  # kwargs: significa key word argument
-        print(f"{llave}: {valor}")
+def desplegarNombres(nombres):
+  for nombre in nombres:
+    print(nombre)
+
+nombres2 = ["José", "Ezequiel", "Elba"]
+desplegarNombres(nombres2)
+desplegarNombres("Roxana")
+#desplegarNombres(20, 30)  # No es un objeto iterable
+desplegarNombres((20, 30))  # Se convierte a una tupla iterable (los parentesis corresponden a las tuplas). Un solo elemento aunque pongamos () no lo convierte en tupla, no hay que olvidarse de la , (coma)
+desplegarNombres([33, 77])  # Se convierte en una lista ([])
 
 
-listarTerminos(IDE="Integrated Development Enviroment", PK="Primary Key")
+# Funciones recursivas
+def factorial(numero):
+  if numero == 1:  # Caso base
+    return 1
+  else:
+    return numero * factorial(numero-1)  # Caso recursivo
+
+num = int(input("Ingres el número que desee saber su factorial: "))
+resultado = factorial(num)
+
+#resultado = factorial(5)  # Lo hacemos en código duro
+print(f"El factorial del número {num} es: {resultado}")
+
