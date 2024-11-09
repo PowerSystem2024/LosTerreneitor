@@ -1,12 +1,16 @@
-mes = int(input("Ingrese un mes del año (1-12): "))
+mes = int(input("Escriba el mes del año que desee saber su estación (1 - 12): "))
 
-if mes == 12 or mes == 1 or mes == 2:
-    print("Usted se encuantra en Verano")
-elif mes == 3 or mes == 4 or mes == 5:
-    print("Usted se encuantra en Otoño")
-elif mes == 6 or mes == 7 or mes == 8:
-    print("Usted se encuentra en Invierno")
-elif mes == 9 or mes == 10 or mes == 11:
-    print("Usted se encuentra en Primavera")
+estacion = None
+
+if mes == 1 or mes == 2 or mes == 3:
+  estacion = "Verano."
+elif mes == 4 or mes == 5 or mes == 6:
+  estacion = "Otoño."
+elif mes == 7 or mes == 8 or mes == 9:
+  estacion = "Invierno."
+elif mes == 10 or mes == 11 or mes == 12:
+  estacion = "Primavera."
 else:
-    print(f"Usted ha ingresado {mes}: NO ES VÁLIDO")
+  estacion = "El mes ingresado no es el correcto."
+
+print(f"Para el mes {mes} la estación es: {estacion}")
